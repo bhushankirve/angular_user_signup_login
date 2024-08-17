@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder,Validators, AsyncValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,8 +11,9 @@ import { UserService } from '../services/user.service';
 })
 export class SignupComponent {
 public signupForm !: FormGroup;
-constructor(private formBuilder : FormBuilder,
-  private http : HttpClient,
+
+constructor(
+  private formBuilder : FormBuilder,
   private router : Router,
   private userService : UserService
 ) {}
@@ -31,14 +31,14 @@ signUp() {
   if (this.signupForm.valid) {
     this.userService.createUser(this.signupForm.value)
       .subscribe(res => {
-        alert('Sign Up Successful !!!');
+        alert('Sign Up Successfulll !!!');
         this.signupForm.reset();
         this.router.navigate(['login']);
       }, err => {
-        alert('Something went wrong');
+        alert('Something went wrong !!!');
       });
   } else {
-    alert('Please fill out the form correctly.');
+    alert('Please fill out the form correctly !!!');
   }
 }
 

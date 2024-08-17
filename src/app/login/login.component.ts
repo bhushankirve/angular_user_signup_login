@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,11 +10,10 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent {
 public loginForm !: FormGroup;
-constructor(private formBuilder: FormBuilder,
-  private http : HttpClient,
+constructor(
+  private formBuilder: FormBuilder,
   private router: Router,
   private userService: UserService
-
 ) { }
 
 ngOnInit(): void {
@@ -31,9 +29,9 @@ login() {
     this.userService.verifyUser(email, password)
       .subscribe(users => {
         if (users.length > 0) {
-          alert('Login Successful !!!');
+          alert('Login Successfulll !!!');
           this.loginForm.reset();
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard'], { queryParams: { username: users[0].fullname } });
         } else {
           alert('Invalid Email ID or Password !!!');
         }
