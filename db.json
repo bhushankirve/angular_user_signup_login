@@ -25,6 +25,38 @@
       "password": "12345678",
       "mobile": 9987765678,
       "id": 4
+    },
+    {
+      "fullname": "Bhushan Kirve",
+      "email": "dev@assetcues.com",
+      "password": "dev@1234",
+      "mobile": 8888888888,
+      "id": 5
+    },
+    {
+      "email": "dev@assetcues.com",
+      "id": 6
+    },
+    {
+      "fullname": "value",
+      "email": "dev@assetcues.com",
+      "password": "dev@1234",
+      "mobile": 9999999999,
+      "id": 7
+    },
+    {
+      "fullname": "dfdfdfdfd",
+      "email": "dev11@assetcues.com",
+      "password": "12345678",
+      "mobile": 8888888888,
+      "id": 8
+    },
+    {
+      "fullname": "fffffffffffff",
+      "email": "d11ev@assetcues.com",
+      "password": "12345678",
+      "mobile": 9511832966,
+      "id": 9
     }
   ],
   "comments": [

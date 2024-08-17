@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent {
 public loginForm !: FormGroup;
 constructor(private formBuilder: FormBuilder,
   private http : HttpClient,
-  private router: Router
+  private router: Router,
+  private userService: UserService
 
 ) { }
 
@@ -23,25 +25,24 @@ ngOnInit(): void {
   })
 }
 
-login()
-{
-  this.http.get<any>('http://localhost:3000/signupUsers')
-  .subscribe(res=> {
-    const user = res.find((a:any)=> {
-      return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-      });
-      if(user)
-        {
-          alert("Login Successful !!!");
+login() {
+  if (this.loginForm.valid) {
+    const { email, password } = this.loginForm.value;
+    this.userService.verifyUser(email, password)
+      .subscribe(users => {
+        if (users.length > 0) {
+          alert('Login Successful !!!');
           this.loginForm.reset();
           this.router.navigate(['dashboard']);
+        } else {
+          alert('Invalid Email ID or Password !!!');
         }
-        else{
-          alert("User not Found !!!");
-          }
-  }, err=>{
-    alert("Something went wrong !!!");
-  })
+      }, err => {
+        alert('Something went wrong !!!');
+      });
+  } else {
+    alert('Please enter your email and password.');
+  }
 }
 
 }
