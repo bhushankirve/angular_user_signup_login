@@ -1,0 +1,40 @@
+{
+  "signupUsers": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullname": "Bhushan Kirve",
+      "email": "dev@assetcues.com",
+      "password": "dev@1234",
+      "mobile": 3456765432,
+      "id": 2
+    },
+    {
+      "fullname": "Shivam More",
+      "email": "dev1@assetcues.com",
+      "password": "user@123",
+      "mobile": 9876456789,
+      "id": 3
+    },
+    {
+      "fullname": "Parag Morajkar",
+      "email": "parag@gmail.com",
+      "password": "12345678",
+      "mobile": 9987765678,
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
