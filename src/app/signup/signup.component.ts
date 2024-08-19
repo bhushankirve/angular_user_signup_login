@@ -20,7 +20,7 @@ constructor(
 
 ngOnInit(): void {
   this.signupForm = this.formBuilder.group({
-    fullname:['', [Validators.required]],
+    fullname:['', [Validators.required,Validators.pattern('^[a-zA-Z ]+$')]],
     email: ['', [Validators.required, Validators.email],[this.emailUniqueValidator()]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     mobile:['', [Validators.required,Validators.pattern('^[0-9]{10}$')]]

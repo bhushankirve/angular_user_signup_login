@@ -57,6 +57,13 @@
       "password": "12345678",
       "mobile": 9511832966,
       "id": 9
+    },
+    {
+      "fullname": "Bhushan Kirve",
+      "email": "bhushankirve@gmail.com",
+      "password": "Bsk1234567",
+      "mobile": 9876567987,
+      "id": 10
     }
   ],
   "comments": [

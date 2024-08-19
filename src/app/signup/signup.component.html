@@ -4,7 +4,7 @@
       <div class="card">
         <div class="text-center">
           <h1>Sign Up</h1>
-          <h6>Register Yourself !!!</h6>
+          <h6>User Registration Form</h6>
         </div>
         <form>
           <form [formGroup]="signupForm" (ngSubmit)="signUp()">
@@ -12,6 +12,9 @@
               <label class="form-label">Full Name</label>
               <input formControlName="fullname" type="text" class="form-control">
               <span class="text-danger" *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('required', 'fullname')">Full Name is required !!!</span>
+              <span class="text-danger" *ngIf="signupForm.controls['fullname'].dirty && signupForm.controls['fullname'].hasError('pattern')">
+                Full Name must contain letters only !!!
+              </span>
             </div>
             <div class="mb-3">
               <label class="form-label">Mobile Number</label>
